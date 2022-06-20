@@ -12,7 +12,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0705882, 0.435294, 0.631373, 1 )
+bg_color = Color( 0.466667, 0.811765, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -45,6 +50,9 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -58,8 +66,8 @@ margin_left = -312.0
 margin_top = 160.0
 margin_right = 308.0
 margin_bottom = 238.0
-custom_colors/font_color = Color( 0.482353, 0.733333, 1, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.482353, 0.733333, 1, 1 )
 text = "Platform Game"
 align = 1
 __meta__ = {
@@ -228,17 +236,20 @@ custom_fonts/font = SubResource( 4 )
 text = "This game was created 
 by Tristan Le for:
 9.1 Video Game Design Class."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 376.84
 margin_top = 442.272
 margin_right = 632.84
 margin_bottom = 526.272
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.584314, 0.964706, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.364706, 0.592157, 0.611765, 1 )
-custom_fonts/font = SubResource( 5 )
 text = "PLAY!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -262,6 +273,5 @@ __meta__ = {
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_Play_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button_pressed"]
