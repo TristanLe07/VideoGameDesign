@@ -1,4 +1,4 @@
-extends Control
+extends Spatial
 
 
 # Declare member variables here. Examples:
@@ -17,11 +17,11 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Level1.tscn")
+	get_tree().change_scene("res://level selection.tscn")
 
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Level2.tscn")
+	get_tree().quit()
 
 
 func _on_Button3_pressed():
