@@ -1,9 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Characters/character_0001.png" type="Texture" id=2]
 [ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://music/Retro Beat.ogg" type="AudioStream" id=4]
 [ext_resource path="res://MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Characters/character_0000.png" type="Texture" id=6]
+[ext_resource path="res://Characters/character_0021.png" type="Texture" id=7]
+[ext_resource path="res://Characters/character_0022.png" type="Texture" id=8]
+[ext_resource path="res://buttonhovber.tres" type="StyleBox" id=9]
+[ext_resource path="res://buttonpress.tres" type="StyleBox" id=10]
+[ext_resource path="res://Button.tres" type="StyleBox" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -12,12 +19,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.466667, 0.811765, 1, 1 )
+bg_color = Color( 0.305882, 0.619608, 0.792157, 1 )
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color( 0.396078, 0.396078, 0.396078, 1 )
+border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -42,6 +49,30 @@ font_data = ExtResource( 1 )
 size = 64
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.45098, 0.45098, 0.45098, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 1 )
@@ -52,6 +83,29 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=8]
 default_font = SubResource( 9 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 32.0
+height = 0.0
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 32.0
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -65,11 +119,13 @@ color = Color( 0, 0.647059, 1, 1 )
 
 [node name="Label" type="Label" parent="ColorRect"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -312.0
-margin_top = 160.0
+margin_top = -124.0
 margin_right = 308.0
-margin_bottom = 238.0
+margin_bottom = -46.0
 custom_colors/font_color = Color( 0.482353, 0.733333, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Platform Game"
@@ -82,13 +138,15 @@ __meta__ = {
 position = Vector2( 160, 440 )
 
 [node name="Panel" type="Panel" parent="ColorRect/left panel"]
-margin_left = -144.0
-margin_top = -40.0
-margin_right = 144.0
-margin_bottom = 144.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -136.0
+margin_top = -48.0
+margin_right = 152.0
+margin_bottom = 136.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Panel" type="Panel" parent="ColorRect/left panel/Panel"]
@@ -177,41 +235,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="ColorRect/left panel"]
-margin_right = 22.0
-margin_bottom = 39.0
+[node name="Label2" type="Label" parent="ColorRect/left panel/Panel"]
+margin_left = 144.0
+margin_top = 40.0
+margin_right = 166.0
+margin_bottom = 79.0
 custom_fonts/font = ExtResource( 3 )
 text = "="
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="ColorRect/left panel"]
-margin_top = 72.0
-margin_right = 22.0
-margin_bottom = 111.0
+[node name="Label5" type="Label" parent="ColorRect/left panel/Panel"]
+margin_left = 144.0
+margin_top = 112.0
+margin_right = 166.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 3 )
 text = "="
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="ColorRect/left panel"]
-margin_left = 32.0
-margin_top = 1.55469
-margin_right = 132.0
-margin_bottom = 40.5547
+[node name="Label3" type="Label" parent="ColorRect/left panel/Panel"]
+margin_left = 176.0
+margin_top = 41.5547
+margin_right = 276.0
+margin_bottom = 80.5547
 custom_fonts/font = ExtResource( 3 )
 text = "MOVE!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="ColorRect/left panel"]
-margin_left = 32.0
-margin_top = 76.6173
-margin_right = 132.0
-margin_bottom = 115.617
+[node name="Label4" type="Label" parent="ColorRect/left panel/Panel"]
+margin_left = 176.0
+margin_top = 116.617
+margin_right = 276.0
+margin_bottom = 155.617
 custom_fonts/font = ExtResource( 3 )
 text = "JUMP!"
 __meta__ = {
@@ -222,20 +283,21 @@ __meta__ = {
 position = Vector2( 864, 441.555 )
 
 [node name="Panel" type="Panel" parent="ColorRect/right panel"]
-margin_left = -144.0
-margin_top = -40.0
-margin_right = 144.0
-margin_bottom = 144.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -152.0
+margin_top = -49.555
+margin_right = 136.0
+margin_bottom = 134.445
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label5" type="Label" parent="ColorRect/right panel"]
-margin_left = -136.0
-margin_top = 6.0
-margin_right = 132.0
-margin_bottom = 86.0
+[node name="Label5" type="Label" parent="ColorRect/right panel/Panel"]
+margin_left = 8.0
+margin_top = 46.0
+margin_right = 276.0
+margin_bottom = 126.0
 custom_fonts/font = SubResource( 4 )
 text = "This game was created 
 by Tristan Le for:
@@ -245,19 +307,25 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 376.84
-margin_top = 442.272
-margin_right = 632.84
-margin_bottom = 526.272
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 228.0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.584314, 0.964706, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.364706, 0.592157, 0.611765, 1 )
 custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
 text = "PLAY!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Button2" type="Button" parent="."]
 anchor_left = 0.5
@@ -269,22 +337,63 @@ margin_top = -40.0
 margin_right = -16.0
 margin_bottom = -8.0
 custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 text = "QUIT!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 512.0
-margin_top = 560.0
-margin_right = 632.0
-margin_bottom = 592.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -40.0
+margin_right = 128.0
+margin_bottom = -8.0
 theme = SubResource( 8 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 10 )
+custom_styles/focus = ExtResource( 11 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 11 )
 text = "3D MENU"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D"]
+position = Vector2( 160, 360 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/KinematicBody2D"]
+position = Vector2( -2.95185e-07, -8 )
+scale = Vector2( 2.66667, 2.66667 )
+frames = SubResource( 10 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/KinematicBody2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 11 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="Node2D"]
+position = Vector2( 848, 368 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D/KinematicBody2D2"]
+position = Vector2( 16, -16 )
+scale = Vector2( 2.66667, 2.66667 )
+frames = SubResource( 12 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/KinematicBody2D2"]
+position = Vector2( 16, -16 )
+shape = SubResource( 13 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_Play_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button_pressed"]

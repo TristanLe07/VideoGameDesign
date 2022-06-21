@@ -1,32 +1,32 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Characters/character_0021.png" type="Texture" id=1]
-[ext_resource path="res://Characters/character_0022.png" type="Texture" id=2]
-[ext_resource path="res://Characters/character_0023.png" type="Texture" id=3]
-[ext_resource path="res://enemy.gd" type="Script" id=4]
+[ext_resource path="res://Characters/character_0017.png" type="Texture" id=1]
+[ext_resource path="res://Characters/character_0015.png" type="Texture" id=2]
+[ext_resource path="res://Characters/character_0016.png" type="Texture" id=3]
+[ext_resource path="res://enemy2.gd" type="Script" id=4]
 [ext_resource path="res://sounds/pepSound2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "squash",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walking",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.4495, 9.97956 )
+extents = Vector2( 11.1413, 9.28499 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15.9873, 4.13453 )
+extents = Vector2( 9.42727, 3.14454 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.3641, 8.58506 )
+extents = Vector2( 12.8554, 7.60564 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 29.1145, 17.3736 )
@@ -39,14 +39,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -29.1145, -17.3736 )
+position = Vector2( -29.3351, -18.1726 )
 scale = Vector2( 1.33529, 1.33762 )
 frames = SubResource( 1 )
 animation = "walking"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -29.144, -11.334 )
+position = Vector2( -30.1921, -10.6394 )
 shape = SubResource( 2 )
 
 [node name="floor_checker" type="RayCast2D" parent="."]
@@ -61,7 +61,7 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( -0.672079, 1.34096 )
+position = Vector2( -1.76981, 3.73266 )
 shape = SubResource( 3 )
 
 [node name="side_checker" type="Area2D" parent="."]
@@ -69,7 +69,7 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="side_checker"]
-position = Vector2( -29.5868, -11.5464 )
+position = Vector2( -30.1921, -10.567 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
