@@ -51,18 +51,6 @@ position = Vector2( 2193.83, 577.641 )
 position = Vector2( 486, 318 )
 detects_cliff = false
 
-[node name="Enemy2" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 1057, 315 )
-detects_cliff = false
-
-[node name="Enemy3" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 1719, 394 )
-detects_cliff = false
-
-[node name="Enemy4" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 4877, 138 )
-detects_cliff = false
-
 [node name="MusicLevel" parent="." instance=ExtResource( 8 )]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]

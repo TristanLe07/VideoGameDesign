@@ -29,14 +29,14 @@ animations = [ {
 "name": "Other Character",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idle2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -73,4 +73,5 @@ shape = SubResource( 2 )
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 pitch_scale = 2.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

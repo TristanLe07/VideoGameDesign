@@ -45,7 +45,7 @@ func _on_top_checker_body_entered(body):
 
 func _on_side_checker_body_entered(body):
 	print("ouch")
-	body.ouch(position.x)
+	get_tree().change_scene("res://death.tscn")
 
 func _on_Timer_timeout():
 	queue_free()
