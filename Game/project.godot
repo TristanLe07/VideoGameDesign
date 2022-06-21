@@ -14,9 +14,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Game Maker Studio 2"
+config/name="Platformer"
+config/description="A Plateform game that was created by Tristan Le using BornCG's Godot 2d Platformer Tutorials for 9.1 Video Game Design Class."
 run/main_scene="res://MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Characters/character_0000.png"
 
 [global]
 

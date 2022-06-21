@@ -8,25 +8,25 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "squash",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walking",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "squash",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.4495, 9.97956 )
+extents = Vector2( 15.4264, 10.1609 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15.9873, 4.13453 )
+extents = Vector2( 15.4264, 3.50363 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.3641, 8.58506 )
+extents = Vector2( 20.5686, 8.48154 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 29.1145, 17.3736 )
@@ -47,7 +47,7 @@ frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -29.144, -11.334 )
+position = Vector2( -29.3351, -11.5153 )
 shape = SubResource( 2 )
 
 [node name="floor_checker" type="RayCast2D" parent="."]
@@ -62,7 +62,7 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="top_checker"]
-position = Vector2( -0.672079, 1.34096 )
+position = Vector2( -0.912787, 0.58812 )
 shape = SubResource( 3 )
 
 [node name="side_checker" type="Area2D" parent="."]
@@ -70,7 +70,7 @@ collision_layer = 16
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="side_checker"]
-position = Vector2( -29.5868, -11.5464 )
+position = Vector2( -29.3351, -11.4429 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]

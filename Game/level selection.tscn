@@ -39,9 +39,6 @@ margin_right = -1.948
 margin_bottom = 1.948
 rect_pivot_offset = Vector2( -665.48, -460.297 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 2.0

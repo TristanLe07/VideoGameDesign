@@ -57,7 +57,7 @@ func ouch(var enemyposx):
 	$Timer.start()
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Level1.tscn")
+	get_tree().reload_current_scene()
 
 
 func _on_Area2D_body_entered(body):

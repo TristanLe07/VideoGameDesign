@@ -30,11 +30,12 @@ shape = SubResource( 1 )
 scale = Vector2( 0.380952, 0.380952 )
 frames = SubResource( 2 )
 animation = "coins"
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
 [node name="SoundCollected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = 11.107
+
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

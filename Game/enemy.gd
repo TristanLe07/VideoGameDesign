@@ -31,6 +31,8 @@ func _physics_process(delta):
 
 
 func _on_top_checker_body_entered(body):
+	print(position.x)
+	print(position.y)
 	$AnimatedSprite.play("squash")
 	speed = 0
 	set_collision_layer_bit(4,false)
@@ -45,7 +47,7 @@ func _on_top_checker_body_entered(body):
 
 func _on_side_checker_body_entered(body):
 	print("ouch")
-	get_tree().change_scene("res://death.tscn")
+	body.ouch(position.x)
 
 func _on_Timer_timeout():
 	queue_free()
