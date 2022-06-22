@@ -22,6 +22,7 @@ config/icon="res://Characters/character_0000.png"
 [global]
 
 font=false
+export=false
 
 [input]
 

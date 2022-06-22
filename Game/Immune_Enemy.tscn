@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/character_0016.png" type="Texture" id=1]
+[ext_resource path="res://Characters/character_0017.png" type="Texture" id=2]
+[ext_resource path="res://Characters/character_0015.png" type="Texture" id=3]
+[ext_resource path="res://Immune_Enemy.gd" type="Script" id=4]
+[ext_resource path="res://sounds/pepSound2.ogg" type="AudioStream" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "squash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20.5686, 21.0218 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20.5686, 7.00725 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 29.1145, 17.3736 )
+scale = Vector2( 0.583414, 0.570837 )
+collision_layer = 16
+collision_mask = 33
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.176471, 0.176471, 1 )
+position = Vector2( -29.3351, -10.9084 )
+scale = Vector2( 1.71405, 1.87639 )
+frames = SubResource( 1 )
+animation = "walking"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -29.3351, -9.41354 )
+shape = SubResource( 2 )
+
+[node name="floor_checker" type="RayCast2D" parent="."]
+position = Vector2( -29.3351, 2.84915 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 2
+
+[node name="side_checker" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="side_checker"]
+position = Vector2( -29.3351, 4.60096 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SoundSquash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 24.0
+
+[connection signal="body_entered" from="side_checker" to="." method="_on_side_checker_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

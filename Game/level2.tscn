@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://map2.tres" type="TileSet" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://MusicLevel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://HUD/coin_gold.png" type="Texture" id=10]
+[ext_resource path="res://faster_enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Immune_Enemy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 corner_radius_top_left = 20
@@ -26,6 +28,22 @@ font_data = ExtResource( 9 )
 size = 64
 font_data = ExtResource( 9 )
 
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.407843, 0.407843, 0.407843, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.235294, 0.235294, 0.235294, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+font_data = ExtResource( 9 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Enemy" type="Node2D" parent="."]
@@ -33,29 +51,29 @@ font_data = ExtResource( 9 )
 [node name="Enemy" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 733, 288 )
 
-[node name="Enemy2" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 2442, 264 )
-
-[node name="Enemy3" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 3186, 231 )
-
 [node name="Enemy4" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 3460, 320 )
 
 [node name="Enemy5" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 3601, 266 )
 
-[node name="Enemy6" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( 3751, 376 )
-
 [node name="Enemy7" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 251, 247 )
 
-[node name="Enemy8" parent="Enemy" instance=ExtResource( 2 )]
-position = Vector2( -654, 234 )
-
 [node name="Enemy9" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( -558, 231 )
+
+[node name="Fast_Enemy" parent="Enemy" instance=ExtResource( 11 )]
+position = Vector2( 3232, 231 )
+
+[node name="Fast_Enemy2" parent="Enemy" instance=ExtResource( 11 )]
+position = Vector2( -599, 231 )
+
+[node name="KinematicBody2D" parent="Enemy" instance=ExtResource( 12 )]
+position = Vector2( 2498, 261 )
+
+[node name="KinematicBody2D2" parent="Enemy" instance=ExtResource( 12 )]
+position = Vector2( 3772, 369 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -121,6 +139,27 @@ position = Vector2( 2432, 253 )
 
 [node name="coin3" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 4966, 127 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -793.0
+margin_top = 80.0
+margin_right = -537.0
+margin_bottom = 209.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_right = 248.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 5 )
+text = "
+Be Warned!
+There are faster and stronger 
+enemies inside of this level!
+There is also an enemy that is unable 
+to die!"
+align = 1
+valign = 1
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -815.763, 207.094 )

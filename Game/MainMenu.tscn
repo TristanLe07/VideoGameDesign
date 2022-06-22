@@ -108,66 +108,69 @@ animations = [ {
 radius = 32.0
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_left = 0.937
+anchor_top = 0.853
+anchor_right = 0.937
+anchor_bottom = 0.853
+margin_left = -959.488
+margin_top = -511.8
+margin_right = 960.512
+margin_bottom = 512.2
 color = Color( 0, 0.647059, 1, 1 )
 
-[node name="Label" type="Label" parent="ColorRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -312.0
-margin_top = -124.0
-margin_right = 308.0
-margin_bottom = -46.0
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.498
+anchor_top = 0.358
+anchor_right = 0.498
+anchor_bottom = 0.358
+margin_left = -309.952
+margin_top = -38.8
+margin_right = 310.048
+margin_bottom = 39.2
 custom_colors/font_color = Color( 0.482353, 0.733333, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Platform Game"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="left panel" type="Node2D" parent="ColorRect"]
-position = Vector2( 160, 440 )
-
-[node name="Panel" type="Panel" parent="ColorRect/left panel"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = -136.0
-margin_top = -48.0
-margin_right = 152.0
-margin_bottom = 136.0
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.164
+anchor_top = 0.807
+anchor_right = 0.164
+anchor_bottom = 0.807
+margin_left = -143.936
+margin_top = -92.2
+margin_right = 144.064
+margin_bottom = 91.8
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Panel" type="Panel" parent="ColorRect/left panel/Panel"]
+[node name="Panel" type="Panel" parent="Panel"]
 margin_left = 8.0
 margin_top = 116.617
 margin_right = 144.0
 margin_bottom = 148.617
 rect_pivot_offset = Vector2( 96, 40 )
 custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="Label" type="Label" parent="ColorRect/left panel/Panel/Panel"]
+[node name="Label" type="Label" parent="Panel/Panel"]
 margin_left = 16.0
 margin_right = 119.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 3 )
 text = "SPACE"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Panel3" type="Panel" parent="ColorRect/left panel/Panel"]
+[node name="Panel3" type="Panel" parent="Panel"]
 margin_left = 96.0
 margin_top = 41.555
 margin_right = 136.0
@@ -176,10 +179,10 @@ rect_pivot_offset = Vector2( 96, 40 )
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="ColorRect/left panel/Panel/Panel3"]
+[node name="Label" type="Label" parent="Panel/Panel3"]
 margin_left = 8.66433
 margin_top = 1.68854
 margin_right = 38.6644
@@ -187,10 +190,10 @@ margin_bottom = 40.6885
 custom_fonts/font = ExtResource( 3 )
 text = "D"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Panel6" type="Panel" parent="ColorRect/left panel/Panel"]
+[node name="Panel6" type="Panel" parent="Panel"]
 margin_left = 16.0
 margin_top = 41.555
 margin_right = 56.0
@@ -199,10 +202,10 @@ rect_pivot_offset = Vector2( 96, 40 )
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="ColorRect/left panel/Panel/Panel6"]
+[node name="Label" type="Label" parent="Panel/Panel6"]
 margin_left = 9.66084
 margin_top = 1.68854
 margin_right = 39.6609
@@ -210,10 +213,10 @@ margin_bottom = 40.6885
 custom_fonts/font = ExtResource( 3 )
 text = "A"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Panel4" type="Panel" parent="ColorRect/left panel/Panel"]
+[node name="Panel4" type="Panel" parent="Panel"]
 margin_left = 56.0
 margin_top = 41.5547
 margin_right = 96.0
@@ -221,10 +224,11 @@ margin_bottom = 81.5547
 rect_pivot_offset = Vector2( 96, 40 )
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="ColorRect/left panel/Panel/Panel4"]
+[node name="Label" type="Label" parent="Panel/Panel4"]
 margin_left = 5.34266
 margin_top = 1.68885
 margin_right = 35.3427
@@ -232,10 +236,10 @@ margin_bottom = 40.6888
 custom_fonts/font = ExtResource( 3 )
 text = "W"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label2" type="Label" parent="ColorRect/left panel/Panel"]
+[node name="Label2" type="Label" parent="Panel"]
 margin_left = 144.0
 margin_top = 40.0
 margin_right = 166.0
@@ -243,10 +247,10 @@ margin_bottom = 79.0
 custom_fonts/font = ExtResource( 3 )
 text = "="
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label5" type="Label" parent="ColorRect/left panel/Panel"]
+[node name="Label5" type="Label" parent="Panel"]
 margin_left = 144.0
 margin_top = 112.0
 margin_right = 166.0
@@ -254,10 +258,10 @@ margin_bottom = 151.0
 custom_fonts/font = ExtResource( 3 )
 text = "="
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label3" type="Label" parent="ColorRect/left panel/Panel"]
+[node name="Label3" type="Label" parent="Panel"]
 margin_left = 176.0
 margin_top = 41.5547
 margin_right = 276.0
@@ -265,10 +269,10 @@ margin_bottom = 80.5547
 custom_fonts/font = ExtResource( 3 )
 text = "MOVE!"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="Label4" type="Label" parent="ColorRect/left panel/Panel"]
+[node name="Label4" type="Label" parent="Panel"]
 margin_left = 176.0
 margin_top = 116.617
 margin_right = 276.0
@@ -276,24 +280,21 @@ margin_bottom = 155.617
 custom_fonts/font = ExtResource( 3 )
 text = "JUMP!"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="right panel" type="Node2D" parent="ColorRect"]
-position = Vector2( 864, 441.555 )
-
-[node name="Panel" type="Panel" parent="ColorRect/right panel"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -152.0
-margin_top = -49.555
-margin_right = 136.0
-margin_bottom = 134.445
+[node name="Panel2" type="Panel" parent="."]
+anchor_left = 0.836
+anchor_top = 0.807
+anchor_right = 0.836
+anchor_bottom = 0.807
+margin_left = -144.064
+margin_top = -92.2
+margin_right = 143.936
+margin_bottom = 91.8
 custom_styles/panel = SubResource( 2 )
 
-[node name="Label5" type="Label" parent="ColorRect/right panel/Panel"]
+[node name="Label5" type="Label" parent="Panel2"]
 margin_left = 8.0
 margin_top = 46.0
 margin_right = 276.0
@@ -308,13 +309,13 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.707
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.707
 margin_left = -136.0
-margin_top = 132.0
-margin_right = 128.0
-margin_bottom = 228.0
+margin_top = -48.2
+margin_right = 136.0
+margin_bottom = 47.8
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.584314, 0.964706, 1, 1 )
@@ -328,14 +329,14 @@ custom_styles/normal = SubResource( 15 )
 text = "PLAY!"
 
 [node name="Button2" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -136.0
-margin_top = -40.0
-margin_right = -16.0
-margin_bottom = -8.0
+anchor_left = 0.426
+anchor_top = 0.933
+anchor_right = 0.426
+anchor_bottom = 0.933
+margin_left = -60.224
+margin_top = -15.8
+margin_right = 59.776
+margin_bottom = 16.2
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = ExtResource( 9 )
 custom_styles/pressed = ExtResource( 10 )
@@ -349,14 +350,14 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Button3" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = -40.0
-margin_right = 128.0
-margin_bottom = -8.0
+anchor_left = 0.574
+anchor_top = 0.933
+anchor_right = 0.574
+anchor_bottom = 0.933
+margin_left = -59.776
+margin_top = -15.8
+margin_right = 60.224
+margin_bottom = 16.2
 theme = SubResource( 8 )
 custom_styles/hover = ExtResource( 9 )
 custom_styles/pressed = ExtResource( 10 )
@@ -374,6 +375,7 @@ position = Vector2( 160, 360 )
 position = Vector2( -2.95185e-07, -8 )
 scale = Vector2( 2.66667, 2.66667 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -388,6 +390,7 @@ position = Vector2( 848, 368 )
 position = Vector2( 16, -16 )
 scale = Vector2( 2.66667, 2.66667 )
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/KinematicBody2D2"]
